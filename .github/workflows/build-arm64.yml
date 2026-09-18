@@ -1,0 +1,80 @@
+name: build-arm64
+
+# 仅构建 linux/arm64 镜像（用于 EasePI R1 等 arm64 设备）
+# 独立于 release.yml，不影响原有发布流程。
+#
+# 触发方式：
+#   1) push 本文件到 main（首次自动构建）
+#   2) 在 Actions 页面手动 Run workflow（可自定义 tag）
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/build-arm64.yml"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "发布用的镜像 tag（默认 arm64）"
+        required: false
+        default: "arm64"
+        type: string
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  docker-arm64:
+    # 公开仓库可直接用 GitHub 原生 arm64 runner（比 QEMU 模拟快很多）
+    runs-on: ubuntu-24.04-arm
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve tags
+        id: vars
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="${{ inputs.tag }}"
+          if [ -z "$tag" ]; then tag="arm64"; fi
+          short="$(git rev-parse --short HEAD)"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "short=$short" >> "$GITHUB_OUTPUT"
+          echo "Will push: $tag , ${tag}-${short}"
+
+      - name: Show runner arch
+        run: uname -m
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push (linux/arm64)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/arm64
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }}-${{ steps.vars.outputs.short }}
+          labels: |
+            org.opencontainers.image.title=PanWatch
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+          build-args: |
+            VERSION=${{ steps.vars.outputs.tag }}-${{ steps.vars.outputs.short }}
+          cache-from: type=gha,scope=arm64
+          cache-to: type=gha,mode=max,scope=arm64
