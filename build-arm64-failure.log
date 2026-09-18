@@ -1,0 +1,391 @@
+run_id=35300963077
+sha=c31ae526354f0ae99d58c827a61ee9cdedc60b2d
+date=2026-09-18T02:51:33Z
+---
+#0 building with "builder-59463e98-5b7b-42de-98ae-9639cb0c6ae2" instance using docker-container driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.66kB done
+#1 DONE 0.0s
+
+#2 [auth] library/node:pull token for registry-1.docker.io
+#2 DONE 0.0s
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/node:20-alpine
+#4 DONE 0.6s
+
+#5 [internal] load metadata for docker.io/library/python:3.11-slim
+#5 DONE 0.6s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 328B done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 2.37MB 0.0s done
+#7 DONE 0.1s
+
+#8 [frontend-builder 1/7] FROM docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293
+#8 resolve docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293 0.0s done
+#8 sha256:cd322d0ddd02673e6c24a2158d1f12f6ec7c6fd9c0dc67123244d0f0eb0f8806 443B / 443B 0.1s done
+#8 sha256:13e45b12880fbbfe3554ecf6b70131ace701d0c2fd3e2fb9abb842ba2494cd40 1.26MB / 1.26MB 0.1s done
+#8 sha256:bda5d7ef971f8ede8ea80002d2ac886ef6807fe32cfe46c38704a7ba0429475d 28.31MB / 43.55MB 0.2s
+#8 sha256:d17f077ada118cc762df373ff803592abf2dfa3ddafaa7381e364dd27a88fca7 4.20MB / 4.20MB 0.1s done
+#8 extracting sha256:d17f077ada118cc762df373ff803592abf2dfa3ddafaa7381e364dd27a88fca7
+#8 sha256:bda5d7ef971f8ede8ea80002d2ac886ef6807fe32cfe46c38704a7ba0429475d 43.55MB / 43.55MB 0.3s
+#8 sha256:bda5d7ef971f8ede8ea80002d2ac886ef6807fe32cfe46c38704a7ba0429475d 43.55MB / 43.55MB 0.5s done
+#8 extracting sha256:d17f077ada118cc762df373ff803592abf2dfa3ddafaa7381e364dd27a88fca7 0.3s done
+#8 extracting sha256:bda5d7ef971f8ede8ea80002d2ac886ef6807fe32cfe46c38704a7ba0429475d
+#8 ...
+
+#9 [stage-1  1/11] FROM docker.io/library/python:3.11-slim@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534
+#9 resolve docker.io/library/python:3.11-slim@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534 done
+#9 sha256:3ff159de35c260cb2f2393a6e8dbecb37fa108e25cae872c2b3e8e967dd4ecb4 251B / 251B 0.1s done
+#9 sha256:0fb0508c44a5ab3fb6553d7adcbc772fa40c2ffcdaf40b2521e5743522800d9b 14.40MB / 14.40MB 0.3s done
+#9 sha256:d79bc110ec9cd1a4d8c7d0822d6ef87d25f2ca15e7fbb97e7b5f4809df5cd9bd 4.61MB / 4.61MB 0.2s done
+#9 sha256:bf7af0229701decd1b9f42143504fc8f69e5664c37e57001d198e731e4f86c2e 30.16MB / 30.16MB 0.7s done
+#9 extracting sha256:bf7af0229701decd1b9f42143504fc8f69e5664c37e57001d198e731e4f86c2e 0.5s done
+#9 DONE 1.3s
+
+#9 [stage-1  1/11] FROM docker.io/library/python:3.11-slim@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534
+#9 extracting sha256:d79bc110ec9cd1a4d8c7d0822d6ef87d25f2ca15e7fbb97e7b5f4809df5cd9bd 0.1s done
+#9 DONE 1.4s
+
+#8 [frontend-builder 1/7] FROM docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293
+#8 extracting sha256:bda5d7ef971f8ede8ea80002d2ac886ef6807fe32cfe46c38704a7ba0429475d 0.7s done
+#8 extracting sha256:13e45b12880fbbfe3554ecf6b70131ace701d0c2fd3e2fb9abb842ba2494cd40 0.0s done
+#8 DONE 1.5s
+
+#9 [stage-1  1/11] FROM docker.io/library/python:3.11-slim@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534
+#9 extracting sha256:0fb0508c44a5ab3fb6553d7adcbc772fa40c2ffcdaf40b2521e5743522800d9b
+#9 ...
+
+#8 [frontend-builder 1/7] FROM docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293
+#8 extracting sha256:cd322d0ddd02673e6c24a2158d1f12f6ec7c6fd9c0dc67123244d0f0eb0f8806 done
+#8 DONE 1.5s
+
+#10 [frontend-builder 2/7] WORKDIR /app/frontend
+#10 ...
+
+#9 [stage-1  1/11] FROM docker.io/library/python:3.11-slim@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534
+#9 extracting sha256:0fb0508c44a5ab3fb6553d7adcbc772fa40c2ffcdaf40b2521e5743522800d9b 0.7s done
+#9 DONE 2.1s
+
+#9 [stage-1  1/11] FROM docker.io/library/python:3.11-slim@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534
+#9 extracting sha256:3ff159de35c260cb2f2393a6e8dbecb37fa108e25cae872c2b3e8e967dd4ecb4
+#9 extracting sha256:3ff159de35c260cb2f2393a6e8dbecb37fa108e25cae872c2b3e8e967dd4ecb4 0.2s done
+#9 DONE 2.3s
+
+#10 [frontend-builder 2/7] WORKDIR /app/frontend
+#10 ...
+
+#11 [stage-1  2/11] WORKDIR /app
+#11 DONE 0.5s
+
+#10 [frontend-builder 2/7] WORKDIR /app/frontend
+#10 DONE 1.3s
+
+#12 [frontend-builder 3/7] RUN npm install -g pnpm
+#12 2.428 
+#12 2.428 added 2 packages in 2s
+#12 2.430 npm notice
+#12 2.430 npm notice New major version of npm available! 10.8.2 -> 12.0.2
+#12 2.430 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+#12 2.430 npm notice To update run: npm install -g npm@12.0.2
+#12 2.430 npm notice
+#12 DONE 2.7s
+
+#13 [stage-1  3/11] RUN apt-get update && apt-get install -y --no-install-recommends     tzdata     fonts-noto-cjk     libxcursor1     libgtk-3-0     libpangocairo-1.0-0     libcairo-gobject2     libgdk-pixbuf-2.0-0     libnss3     libnspr4     libatk1.0-0     libatk-bridge2.0-0     libcups2     libdrm2     libxkbcommon0     libxcomposite1     libxdamage1     libxfixes3     libxrandr2     libgbm1     libasound2     libpango-1.0-0     libcairo2     libx11-6     libx11-xcb1     libxcb1     libxext6     libxi6     libxrender1     libxss1     libxtst6     libxshmfence1     libegl1     libfontconfig1     libglib2.0-0     && rm -rf /var/lib/apt/lists/*     && fc-cache -fv
+#13 0.229 Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+#13 0.264 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#13 0.276 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#13 0.290 Get:4 http://deb.debian.org/debian trixie/main arm64 Packages [9614 kB]
+#13 0.408 Get:5 http://deb.debian.org/debian trixie-updates/main arm64 Packages [4424 B]
+#13 0.420 Get:6 http://deb.debian.org/debian-security trixie-security/main arm64 Packages [263 kB]
+#13 1.067 Fetched 10.1 MB in 1s (10.1 MB/s)
+#13 1.067 Reading package lists...
+#13 1.555 Reading package lists...
+#13 2.085 Building dependency tree...
+#13 2.247 Reading state information...
+#13 2.471 The following additional packages will be installed:
+#13 2.471   adwaita-icon-theme at-spi2-common dbus dbus-bin dbus-daemon
+#13 2.471   dbus-session-bus-common dbus-system-bus-common dbus-user-session
+#13 2.471   dconf-gsettings-backend dconf-service fontconfig fontconfig-config
+#13 2.471   fonts-dejavu-core fonts-dejavu-mono gtk-update-icon-cache hicolor-icon-theme
+#13 2.471   libapparmor1 libasound2-data libatomic1 libatspi2.0-0t64 libavahi-client3
+#13 2.471   libavahi-common-data libavahi-common3 libbrotli1 libcloudproviders0
+#13 2.471   libcolord2 libcom-err2 libdatrie1 libdbus-1-3 libdconf1 libdeflate0
+#13 2.471   libdrm-amdgpu1 libdrm-common libedit2 libegl-mesa0 libelf1t64 libepoxy0
+#13 2.471   libexpat1 libfreetype6 libfribidi0 libgdk-pixbuf2.0-common libglvnd0
+#13 2.471   libgnutls30t64 libgraphite2-3 libgssapi-krb5-2 libgtk-3-common libharfbuzz0b
+#13 2.471   libidn2-0 libjbig0 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3
+#13 2.471   libkrb5support0 liblcms2-2 liblerc4 libllvm19 libp11-kit0 libpam-systemd
+#13 2.471   libpangoft2-1.0-0 libpixman-1-0 libpng16-16t64 libproc2-0 libsensors-config
+#13 2.471   libsensors5 libsharpyuv0 libsystemd-shared libtasn1-6 libthai-data libthai0
+#13 2.471   libtiff6 libunistring5 libwayland-client0 libwayland-cursor0 libwayland-egl1
+#13 2.471   libwayland-server0 libwebp7 libx11-data libxau6 libxcb-dri3-0
+#13 2.471   libxcb-present0 libxcb-randr0 libxcb-render0 libxcb-shm0 libxcb-sync1
+#13 2.472   libxcb-xfixes0 libxdmcp6 libxinerama1 libxml2 libz3-4 mesa-libgallium procps
+#13 2.472   shared-mime-info systemd systemd-sysv x11-common xkb-data
+#13 2.473 Suggested packages:
+#13 2.473   adwaita-icon-theme-legacy fonts-noto-cjk-extra alsa-utils libasound2-plugins
+#13 2.473   colord cups-common low-memory-monitor gnutls-bin krb5-doc krb5-user gvfs
+#13 2.473   liblcms2-utils libcryptsetup12 libtss2-rc0t64 lm-sensors libarchive13t64
+#13 2.473   libbpf1 libdw1t64 libfido2-1 libgcrypt20 libip4tc2 libpwquality1
+#13 2.473   libqrencode4 systemd-container systemd-homed systemd-userdbd systemd-boot
+#13 2.473   systemd-resolved systemd-repart libtss2-tcti-device0 polkitd
+#13 2.473 Recommended packages:
+#13 2.473   librsvg2-common alsa-ucm-conf alsa-topology-conf at-spi2-core
+#13 2.473   libgdk-pixbuf2.0-bin libglib2.0-data xdg-user-dirs libgtk-3-bin krb5-locales
+#13 2.473   libkmod2 psmisc linux-sysctl-defaults systemd-timesyncd | time-daemon
+#13 2.473   systemd-cryptsetup libnss-systemd
+#13 ...
+
+#14 [frontend-builder 4/7] COPY frontend/package.json frontend/pnpm-lock.yaml ./
+#14 DONE 0.0s
+
+#15 [frontend-builder 5/7] RUN pnpm install --frozen-lockfile
+#15 0.087 ? Verifying lockfile against supply-chain policies (342 entries)...
+#15 0.312 Packages are hard linked from the content-addressable store to the virtual store.
+#15 0.312   Content-addressable store is at: /root/.local/share/pnpm/store/v11
+#15 0.312   Virtual store is at:             node_modules/.pnpm
+#15 1.475 Progress: resolved 295, reused 0, downloaded 295, added 288
+#15 1.695 ✓ Lockfile passes supply-chain policies (342 entries in 1.6s)
+#15 1.695 Lockfile is up to date, resolution step is skipped
+#15 1.703 Packages: +295
+#15 1.703 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#15 1.731 Progress: resolved 295, reused 0, downloaded 295, added 295, done
+#15 1.874 
+#15 1.874 dependencies:
+#15 1.874 + @radix-ui/react-dialog 1.1.15
+#15 1.874 + @radix-ui/react-dropdown-menu 2.1.16
+#15 1.874 + @radix-ui/react-label 2.1.8
+#15 1.874 + @radix-ui/react-popover 1.1.15
+#15 1.874 + @radix-ui/react-select 2.2.6
+#15 1.874 + @radix-ui/react-slot 1.2.4
+#15 1.874 + @radix-ui/react-switch 1.2.6
+#15 1.874 + @radix-ui/react-tabs 1.1.13
+#15 1.874 + @radix-ui/react-toast 1.2.15
+#15 1.874 + class-variance-authority 0.7.1
+#15 1.874 + clsx 2.1.1
+#15 1.874 + date-fn 0.0.2
+#15 1.874 + lucide-react 0.300.0
+#15 1.874 + react 18.3.1
+#15 1.874 + react-day-picker 9.13.2
+#15 1.874 + react-dom 18.3.1
+#15 1.874 + react-markdown 10.1.0
+#15 1.874 + react-router-dom 6.30.3
+#15 1.874 + remark-gfm 4.0.1
+#15 1.874 + tailwind-merge 2.6.0
+#15 1.874 + tailwindcss-animate 1.0.7
+#15 1.874 
+#15 1.874 devDependencies:
+#15 1.874 + @tailwindcss/typography 0.5.19
+#15 1.874 + @types/react 18.3.27
+#15 1.874 + @types/react-dom 18.3.7
+#15 1.874 + @vitejs/plugin-react 4.7.0
+#15 1.874 + autoprefixer 10.4.23
+#15 1.874 + postcss 8.5.6
+#15 1.874 + tailwindcss 3.4.19
+#15 1.874 + typescript 5.9.3
+#15 1.874 + vite 5.4.21
+#15 1.874 
+#15 1.887 Error: ERR_PNPM_IGNORED_BUILDS
+#15 1.887 
+#15 1.887   × installing dependencies
+#15 1.887   ╰─▶ Ignored build scripts: esbuild@0.21.5
+#15 1.887   help: Run "pnpm approve-builds" to pick which dependencies should be allowed
+#15 1.887         to run scripts.
+#15 1.887 
+#15 ERROR: process "/bin/sh -c pnpm install --frozen-lockfile" did not complete successfully: exit code: 1
+
+#13 [stage-1  3/11] RUN apt-get update && apt-get install -y --no-install-recommends     tzdata     fonts-noto-cjk     libxcursor1     libgtk-3-0     libpangocairo-1.0-0     libcairo-gobject2     libgdk-pixbuf-2.0-0     libnss3     libnspr4     libatk1.0-0     libatk-bridge2.0-0     libcups2     libdrm2     libxkbcommon0     libxcomposite1     libxdamage1     libxfixes3     libxrandr2     libgbm1     libasound2     libpango-1.0-0     libcairo2     libx11-6     libx11-xcb1     libxcb1     libxext6     libxi6     libxrender1     libxss1     libxtst6     libxshmfence1     libegl1     libfontconfig1     libglib2.0-0     && rm -rf /var/lib/apt/lists/*     && fc-cache -fv
+#13 3.029 The following NEW packages will be installed:
+#13 3.029   adwaita-icon-theme at-spi2-common dbus dbus-bin dbus-daemon
+#13 3.029   dbus-session-bus-common dbus-system-bus-common dbus-user-session
+#13 3.029   dconf-gsettings-backend dconf-service fontconfig fontconfig-config
+#13 3.029   fonts-dejavu-core fonts-dejavu-mono fonts-noto-cjk gtk-update-icon-cache
+#13 3.029   hicolor-icon-theme libapparmor1 libasound2-data libasound2t64
+#13 3.029   libatk-bridge2.0-0t64 libatk1.0-0t64 libatomic1 libatspi2.0-0t64
+#13 3.029   libavahi-client3 libavahi-common-data libavahi-common3 libbrotli1
+#13 3.029   libcairo-gobject2 libcairo2 libcloudproviders0 libcolord2 libcom-err2
+#13 3.029   libcups2t64 libdatrie1 libdbus-1-3 libdconf1 libdeflate0 libdrm-amdgpu1
+#13 3.029   libdrm-common libdrm2 libedit2 libegl-mesa0 libegl1 libelf1t64 libepoxy0
+#13 3.029   libexpat1 libfontconfig1 libfreetype6 libfribidi0 libgbm1
+#13 3.029   libgdk-pixbuf-2.0-0 libgdk-pixbuf2.0-common libglib2.0-0t64 libglvnd0
+#13 3.030   libgnutls30t64 libgraphite2-3 libgssapi-krb5-2 libgtk-3-0t64 libgtk-3-common
+#13 3.030   libharfbuzz0b libidn2-0 libjbig0 libjpeg62-turbo libk5crypto3 libkeyutils1
+#13 3.030   libkrb5-3 libkrb5support0 liblcms2-2 liblerc4 libllvm19 libnspr4 libnss3
+#13 3.030   libp11-kit0 libpam-systemd libpango-1.0-0 libpangocairo-1.0-0
+#13 3.030   libpangoft2-1.0-0 libpixman-1-0 libpng16-16t64 libproc2-0 libsensors-config
+#13 3.030   libsensors5 libsharpyuv0 libsystemd-shared libtasn1-6 libthai-data libthai0
+#13 3.030   libtiff6 libunistring5 libwayland-client0 libwayland-cursor0 libwayland-egl1
+#13 3.030   libwayland-server0 libwebp7 libx11-6 libx11-data libx11-xcb1 libxau6
+#13 3.030   libxcb-dri3-0 libxcb-present0 libxcb-randr0 libxcb-render0 libxcb-shm0
+#13 3.030   libxcb-sync1 libxcb-xfixes0 libxcb1 libxcomposite1 libxcursor1 libxdamage1
+#13 3.030   libxdmcp6 libxext6 libxfixes3 libxi6 libxinerama1 libxkbcommon0 libxml2
+#13 3.030   libxrandr2 libxrender1 libxshmfence1 libxss1 libxtst6 libz3-4
+#13 3.031   mesa-libgallium procps shared-mime-info systemd systemd-sysv x11-common
+#13 3.031   xkb-data
+#13 3.032 The following packages will be upgraded:
+#13 3.033   tzdata
+#13 3.094 1 upgraded, 130 newly installed, 0 to remove and 11 not upgraded.
+#13 3.094 Need to get 131 MB of archives.
+#13 3.094 After this operation, 442 MB of additional disk space will be used.
+#13 3.094 Get:1 http://deb.debian.org/debian trixie/main arm64 libsystemd-shared arm64 257.13-1~deb13u1 [1922 kB]
+#13 3.204 Get:2 http://deb.debian.org/debian trixie/main arm64 libapparmor1 arm64 4.1.0-1 [42.9 kB]
+#13 3.219 Get:3 http://deb.debian.org/debian trixie/main arm64 systemd arm64 257.13-1~deb13u1 [2921 kB]
+#13 3.246 Get:4 http://deb.debian.org/debian trixie/main arm64 systemd-sysv arm64 257.13-1~deb13u1 [64.9 kB]
+#13 3.247 Get:5 http://deb.debian.org/debian trixie/main arm64 libdbus-1-3 arm64 1.16.2-2 [169 kB]
+#13 3.255 Get:6 http://deb.debian.org/debian trixie/main arm64 dbus-bin arm64 1.16.2-2 [78.8 kB]
+#13 3.255 Get:7 http://deb.debian.org/debian trixie/main arm64 dbus-session-bus-common all 1.16.2-2 [52.3 kB]
+#13 3.255 Get:8 http://deb.debian.org/debian trixie/main arm64 libexpat1 arm64 2.8.3-1~deb13u1 [109 kB]
+#13 3.256 Get:9 http://deb.debian.org/debian trixie/main arm64 dbus-daemon arm64 1.16.2-2 [152 kB]
+#13 3.257 Get:10 http://deb.debian.org/debian trixie/main arm64 dbus-system-bus-common all 1.16.2-2 [53.5 kB]
+#13 3.259 Get:11 http://deb.debian.org/debian trixie/main arm64 dbus arm64 1.16.2-2 [70.7 kB]
+#13 3.260 Get:12 http://deb.debian.org/debian trixie/main arm64 tzdata all 2026c-0+deb13u1 [264 kB]
+#13 3.262 Get:13 http://deb.debian.org/debian trixie/main arm64 libproc2-0 arm64 2:4.0.4-9 [62.8 kB]
+#13 3.270 Get:14 http://deb.debian.org/debian trixie/main arm64 procps arm64 2:4.0.4-9 [871 kB]
+#13 3.275 Get:15 http://deb.debian.org/debian trixie/main arm64 libpam-systemd arm64 257.13-1~deb13u1 [276 kB]
+#13 3.283 Get:16 http://deb.debian.org/debian trixie/main arm64 libgdk-pixbuf2.0-common all 2.42.12+dfsg-4+deb13u1 [312 kB]
+#13 3.284 Get:17 http://deb.debian.org/debian trixie/main arm64 libatomic1 arm64 14.2.0-19 [10.1 kB]
+#13 3.285 Get:18 http://deb.debian.org/debian trixie/main arm64 libglib2.0-0t64 arm64 2.84.4-3~deb13u5 [1429 kB]
+#13 3.289 Get:19 http://deb.debian.org/debian trixie/main arm64 libxml2 arm64 2.12.7+dfsg+really2.9.14-2.1+deb13u3 [631 kB]
+#13 3.297 Get:20 http://deb.debian.org/debian trixie/main arm64 shared-mime-info arm64 2.4-5+b2 [756 kB]
+#13 3.301 Get:21 http://deb.debian.org/debian trixie/main arm64 libjpeg62-turbo arm64 1:2.1.5-4 [173 kB]
+#13 3.302 Get:22 http://deb.debian.org/debian trixie/main arm64 libpng16-16t64 arm64 1.6.48-1+deb13u5 [275 kB]
+#13 3.309 Get:23 http://deb.debian.org/debian trixie/main arm64 libdeflate0 arm64 1.23-2 [42.4 kB]
+#13 3.309 Get:24 http://deb.debian.org/debian trixie/main arm64 libjbig0 arm64 2.1-6.1+b2 [30.4 kB]
+#13 3.310 Get:25 http://deb.debian.org/debian trixie/main arm64 liblerc4 arm64 4.0.0+ds-5 [146 kB]
+#13 3.310 Get:26 http://deb.debian.org/debian trixie/main arm64 libsharpyuv0 arm64 1.5.0-0.1 [114 kB]
+#13 3.311 Get:27 http://deb.debian.org/debian trixie/main arm64 libwebp7 arm64 1.5.0-0.1 [271 kB]
+#13 3.323 Get:28 http://deb.debian.org/debian trixie/main arm64 libtiff6 arm64 4.7.0-3+deb13u3 [325 kB]
+#13 3.325 Get:29 http://deb.debian.org/debian trixie/main arm64 libgdk-pixbuf-2.0-0 arm64 2.42.12+dfsg-4+deb13u1 [131 kB]
+#13 3.327 Get:30 http://deb.debian.org/debian trixie/main arm64 gtk-update-icon-cache arm64 4.18.6+ds-2 [52.3 kB]
+#13 3.328 Get:31 http://deb.debian.org/debian trixie/main arm64 hicolor-icon-theme all 0.18-2 [11.8 kB]
+#13 3.329 Get:32 http://deb.debian.org/debian trixie/main arm64 adwaita-icon-theme all 48.1-1 [504 kB]
+#13 3.331 Get:33 http://deb.debian.org/debian trixie/main arm64 at-spi2-common all 2.56.2-1+deb13u2 [171 kB]
+#13 3.332 Get:34 http://deb.debian.org/debian trixie/main arm64 dbus-user-session arm64 1.16.2-2 [52.1 kB]
+#13 3.333 Get:35 http://deb.debian.org/debian trixie/main arm64 libdconf1 arm64 0.40.0-5 [40.4 kB]
+#13 3.334 Get:36 http://deb.debian.org/debian trixie/main arm64 dconf-service arm64 0.40.0-5 [30.9 kB]
+#13 3.335 Get:37 http://deb.debian.org/debian trixie/main arm64 dconf-gsettings-backend arm64 0.40.0-5 [27.3 kB]
+#13 3.344 Get:38 http://deb.debian.org/debian trixie/main arm64 libbrotli1 arm64 1.1.0-2+b7 [308 kB]
+#13 3.345 Get:39 http://deb.debian.org/debian trixie/main arm64 libfreetype6 arm64 2.13.3+dfsg-1+deb13u1 [422 kB]
+#13 3.351 Get:40 http://deb.debian.org/debian trixie/main arm64 fonts-dejavu-mono all 2.37-8 [489 kB]
+#13 3.357 Get:41 http://deb.debian.org/debian trixie/main arm64 fonts-dejavu-core all 2.37-8 [840 kB]
+#13 3.360 Get:42 http://deb.debian.org/debian trixie/main arm64 fontconfig-config arm64 2.15.0-2.3 [318 kB]
+#13 3.362 Get:43 http://deb.debian.org/debian trixie/main arm64 libfontconfig1 arm64 2.15.0-2.3 [387 kB]
+#13 3.365 Get:44 http://deb.debian.org/debian trixie/main arm64 fontconfig arm64 2.15.0-2.3 [463 kB]
+#13 3.369 Get:45 http://deb.debian.org/debian trixie/main arm64 fonts-noto-cjk all 1:20240730+repack1-1 [56.7 MB]
+#13 3.782 Get:46 http://deb.debian.org/debian trixie/main arm64 libasound2-data all 1.2.14-1+deb13u1 [21.2 kB]
+#13 3.783 Get:47 http://deb.debian.org/debian trixie/main arm64 libasound2t64 arm64 1.2.14-1+deb13u1 [342 kB]
+#13 3.785 Get:48 http://deb.debian.org/debian trixie/main arm64 libatk1.0-0t64 arm64 2.56.2-1+deb13u2 [50.4 kB]
+#13 3.787 Get:49 http://deb.debian.org/debian trixie/main arm64 libxau6 arm64 1:1.0.11-1 [20.6 kB]
+#13 3.789 Get:50 http://deb.debian.org/debian trixie/main arm64 libxdmcp6 arm64 1:1.1.5-1 [27.8 kB]
+#13 3.789 Get:51 http://deb.debian.org/debian trixie/main arm64 libxcb1 arm64 1.17.0-2+b1 [143 kB]
+#13 3.791 Get:52 http://deb.debian.org/debian trixie/main arm64 libx11-data all 2:1.8.12-1 [343 kB]
+#13 3.792 Get:53 http://deb.debian.org/debian trixie/main arm64 libx11-6 arm64 2:1.8.12-1 [795 kB]
+#13 3.797 Get:54 http://deb.debian.org/debian trixie/main arm64 libxext6 arm64 2:1.3.4-1+b3 [49.2 kB]
+#13 3.797 Get:55 http://deb.debian.org/debian trixie/main arm64 libxi6 arm64 2:1.8.2-1 [77.8 kB]
+#13 3.807 Get:56 http://deb.debian.org/debian trixie/main arm64 libatspi2.0-0t64 arm64 2.56.2-1+deb13u2 [76.7 kB]
+#13 3.809 Get:57 http://deb.debian.org/debian trixie/main arm64 libatk-bridge2.0-0t64 arm64 2.56.2-1+deb13u2 [65.0 kB]
+#13 3.810 Get:58 http://deb.debian.org/debian trixie/main arm64 libavahi-common-data arm64 0.8-16 [112 kB]
+#13 3.812 Get:59 http://deb.debian.org/debian trixie/main arm64 libavahi-common3 arm64 0.8-16 [43.3 kB]
+#13 3.813 Get:60 http://deb.debian.org/debian trixie/main arm64 libavahi-client3 arm64 0.8-16 [46.7 kB]
+#13 3.814 Get:61 http://deb.debian.org/debian trixie/main arm64 libpixman-1-0 arm64 0.44.0-3 [168 kB]
+#13 3.815 Get:62 http://deb.debian.org/debian trixie/main arm64 libxcb-render0 arm64 1.17.0-2+b1 [115 kB]
+#13 3.818 Get:63 http://deb.debian.org/debian trixie/main arm64 libxcb-shm0 arm64 1.17.0-2+b1 [105 kB]
+#13 3.820 Get:64 http://deb.debian.org/debian trixie/main arm64 libxrender1 arm64 1:0.9.12-1 [27.0 kB]
+#13 3.822 Get:65 http://deb.debian.org/debian trixie/main arm64 libcairo2 arm64 1.18.4-1+b1 [483 kB]
+#13 3.844 Get:66 http://deb.debian.org/debian trixie/main arm64 libcairo-gobject2 arm64 1.18.4-1+b1 [130 kB]
+#13 3.845 Get:67 http://deb.debian.org/debian trixie/main arm64 libcloudproviders0 arm64 0.3.6-2 [27.4 kB]
+#13 3.846 Get:68 http://deb.debian.org/debian trixie/main arm64 liblcms2-2 arm64 2.16-2+deb13u2 [152 kB]
+#13 3.848 Get:69 http://deb.debian.org/debian trixie/main arm64 libcolord2 arm64 1.4.7-3 [130 kB]
+#13 3.849 Get:70 http://deb.debian.org/debian trixie/main arm64 libcom-err2 arm64 1.47.2-3+b12 [24.9 kB]
+#13 3.849 Get:71 http://deb.debian.org/debian trixie/main arm64 libunistring5 arm64 1.3-2 [453 kB]
+#13 3.851 Get:72 http://deb.debian.org/debian trixie/main arm64 libidn2-0 arm64 2.3.8-2 [107 kB]
+#13 3.852 Get:73 http://deb.debian.org/debian trixie/main arm64 libp11-kit0 arm64 0.25.5-3 [409 kB]
+#13 3.853 Get:74 http://deb.debian.org/debian trixie/main arm64 libtasn1-6 arm64 4.20.0-2+deb13u1 [47.3 kB]
+#13 3.854 Get:75 http://deb.debian.org/debian trixie/main arm64 libgnutls30t64 arm64 3.8.9-3+deb13u4 [1379 kB]
+#13 3.858 Get:76 http://deb.debian.org/debian trixie/main arm64 libkrb5support0 arm64 1.21.3-5+deb13u1 [32.5 kB]
+#13 3.870 Get:77 http://deb.debian.org/debian trixie/main arm64 libk5crypto3 arm64 1.21.3-5+deb13u1 [81.4 kB]
+#13 3.871 Get:78 http://deb.debian.org/debian trixie/main arm64 libkeyutils1 arm64 1.6.3-6 [9716 B]
+#13 3.872 Get:79 http://deb.debian.org/debian trixie/main arm64 libkrb5-3 arm64 1.21.3-5+deb13u1 [308 kB]
+#13 3.873 Get:80 http://deb.debian.org/debian trixie/main arm64 libgssapi-krb5-2 arm64 1.21.3-5+deb13u1 [128 kB]
+#13 3.874 Get:81 http://deb.debian.org/debian trixie/main arm64 libcups2t64 arm64 2.4.10-3+deb13u2 [236 kB]
+#13 3.875 Get:82 http://deb.debian.org/debian trixie/main arm64 libdatrie1 arm64 0.2.13-3+b1 [37.6 kB]
+#13 3.875 Get:83 http://deb.debian.org/debian trixie/main arm64 libdrm-common all 2.4.124-2 [8288 B]
+#13 3.876 Get:84 http://deb.debian.org/debian trixie/main arm64 libdrm2 arm64 2.4.124-2 [38.3 kB]
+#13 3.881 Get:85 http://deb.debian.org/debian trixie/main arm64 libdrm-amdgpu1 arm64 2.4.124-2 [21.8 kB]
+#13 3.881 Get:86 http://deb.debian.org/debian trixie/main arm64 libedit2 arm64 3.1-20250104-1 [89.3 kB]
+#13 3.892 Get:87 http://deb.debian.org/debian trixie/main arm64 libwayland-server0 arm64 1.23.1-3 [33.7 kB]
+#13 3.893 Get:88 http://deb.debian.org/debian trixie/main arm64 libelf1t64 arm64 0.192-4 [189 kB]
+#13 3.895 Get:89 http://deb.debian.org/debian trixie/main arm64 libz3-4 arm64 4.13.3-1 [7507 kB]
+#13 3.919 Get:90 http://deb.debian.org/debian trixie/main arm64 libllvm19 arm64 1:19.1.7-3+b1 [23.3 MB]
+#13 3.986 Get:91 http://deb.debian.org/debian trixie/main arm64 libsensors-config all 1:3.6.2-2 [16.2 kB]
+#13 3.986 Get:92 http://deb.debian.org/debian trixie/main arm64 libsensors5 arm64 1:3.6.2-2 [36.4 kB]
+#13 3.986 Get:93 http://deb.debian.org/debian trixie/main arm64 libx11-xcb1 arm64 2:1.8.12-1 [247 kB]
+#13 3.986 Get:94 http://deb.debian.org/debian trixie/main arm64 libxcb-dri3-0 arm64 1.17.0-2+b1 [107 kB]
+#13 3.987 Get:95 http://deb.debian.org/debian trixie/main arm64 libxcb-present0 arm64 1.17.0-2+b1 [106 kB]
+#13 3.988 Get:96 http://deb.debian.org/debian trixie/main arm64 libxcb-randr0 arm64 1.17.0-2+b1 [117 kB]
+#13 3.989 Get:97 http://deb.debian.org/debian trixie/main arm64 libxcb-sync1 arm64 1.17.0-2+b1 [109 kB]
+#13 3.990 Get:98 http://deb.debian.org/debian trixie/main arm64 libxcb-xfixes0 arm64 1.17.0-2+b1 [110 kB]
+#13 3.990 Get:99 http://deb.debian.org/debian trixie/main arm64 libxshmfence1 arm64 1.3.3-1 [11.1 kB]
+#13 3.998 Get:100 http://deb.debian.org/debian trixie/main arm64 mesa-libgallium arm64 25.0.7-2+deb13u1 [8033 kB]
+#13 4.038 Get:101 http://deb.debian.org/debian trixie/main arm64 libgbm1 arm64 25.0.7-2+deb13u1 [44.1 kB]
+#13 4.039 Get:102 http://deb.debian.org/debian trixie/main arm64 libwayland-client0 arm64 1.23.1-3 [26.1 kB]
+#13 4.039 Get:103 http://deb.debian.org/debian trixie/main arm64 libegl-mesa0 arm64 25.0.7-2+deb13u1 [121 kB]
+#13 4.040 Get:104 http://deb.debian.org/debian trixie/main arm64 libepoxy0 arm64 1.5.10-2 [200 kB]
+#13 4.040 Get:105 http://deb.debian.org/debian trixie/main arm64 libfribidi0 arm64 1.0.16-1 [26.5 kB]
+#13 4.041 Get:106 http://deb.debian.org/debian trixie/main arm64 libglvnd0 arm64 1.7.0-1+b2 [41.6 kB]
+#13 4.041 Get:107 http://deb.debian.org/debian trixie/main arm64 libgraphite2-3 arm64 1.3.14-2+deb13u1 [70.3 kB]
+#13 4.041 Get:108 http://deb.debian.org/debian trixie/main arm64 libharfbuzz0b arm64 10.2.0-1+deb13u1 [442 kB]
+#13 4.043 Get:109 http://deb.debian.org/debian trixie/main arm64 libthai-data all 0.1.29-2 [168 kB]
+#13 4.051 Get:110 http://deb.debian.org/debian trixie/main arm64 libthai0 arm64 0.1.29-2+b1 [48.4 kB]
+#13 4.065 Get:111 http://deb.debian.org/debian trixie/main arm64 libpango-1.0-0 arm64 1.56.3-1 [213 kB]
+#13 4.070 Get:112 http://deb.debian.org/debian trixie/main arm64 libpangoft2-1.0-0 arm64 1.56.3-1 [52.9 kB]
+#13 4.071 Get:113 http://deb.debian.org/debian trixie/main arm64 libpangocairo-1.0-0 arm64 1.56.3-1 [33.7 kB]
+#13 4.071 Get:114 http://deb.debian.org/debian trixie/main arm64 libwayland-cursor0 arm64 1.23.1-3 [11.7 kB]
+#13 4.072 Get:115 http://deb.debian.org/debian trixie/main arm64 libwayland-egl1 arm64 1.23.1-3 [5952 B]
+#13 4.072 Get:116 http://deb.debian.org/debian trixie/main arm64 libxcomposite1 arm64 1:0.4.6-1 [16.4 kB]
+#13 4.073 Get:117 http://deb.debian.org/debian trixie/main arm64 libxfixes3 arm64 1:6.0.0-2+b4 [20.5 kB]
+#13 4.074 Get:118 http://deb.debian.org/debian trixie/main arm64 libxcursor1 arm64 1:1.2.3-1 [39.3 kB]
+#13 4.074 Get:119 http://deb.debian.org/debian trixie/main arm64 libxdamage1 arm64 1:1.1.6-1+b2 [15.6 kB]
+#13 4.076 Get:120 http://deb.debian.org/debian trixie/main arm64 libxinerama1 arm64 2:1.1.4-3+b4 [16.0 kB]
+#13 4.088 Get:121 http://deb.debian.org/debian trixie/main arm64 xkb-data all 2.42-1 [790 kB]
+#13 4.107 Get:122 http://deb.debian.org/debian trixie/main arm64 libxkbcommon0 arm64 1.7.0-2 [106 kB]
+#13 4.111 Get:123 http://deb.debian.org/debian trixie/main arm64 libxrandr2 arm64 2:1.5.4-1+b3 [35.9 kB]
+#13 4.111 Get:124 http://deb.debian.org/debian trixie/main arm64 libgtk-3-common all 3.24.49-3 [4908 kB]
+#13 4.506 Get:125 http://deb.debian.org/debian trixie/main arm64 libgtk-3-0t64 arm64 3.24.49-3 [2565 kB]
+#13 4.511 Get:126 http://deb.debian.org/debian trixie/main arm64 libnspr4 arm64 2:4.36-1 [102 kB]
+#13 4.511 Get:127 http://deb.debian.org/debian trixie/main arm64 libnss3 arm64 2:3.110-1+deb13u4 [1293 kB]
+#13 4.515 Get:128 http://deb.debian.org/debian trixie/main arm64 x11-common all 1:7.7+24+deb13u1 [217 kB]
+#13 4.516 Get:129 http://deb.debian.org/debian trixie/main arm64 libxss1 arm64 1:1.2.3-1+b3 [17.1 kB]
+#13 4.517 Get:130 http://deb.debian.org/debian trixie/main arm64 libxtst6 arm64 2:1.2.5-1 [25.7 kB]
+#13 4.517 Get:131 http://deb.debian.org/debian trixie/main arm64 libegl1 arm64 1.7.0-1+b2 [34.0 kB]
+#13 CANCELED
+------
+ > [frontend-builder 5/7] RUN pnpm install --frozen-lockfile:
+1.874 + typescript 5.9.3
+1.874 + vite 5.4.21
+1.874 
+1.887 Error: ERR_PNPM_IGNORED_BUILDS
+1.887 
+1.887   × installing dependencies
+1.887   ╰─▶ Ignored build scripts: esbuild@0.21.5
+1.887   help: Run "pnpm approve-builds" to pick which dependencies should be allowed
+1.887         to run scripts.
+1.887 
+------
+Dockerfile:16
+--------------------
+  14 |     
+  15 |     # 安装依赖
+  16 | >>> RUN pnpm install --frozen-lockfile
+  17 |     
+  18 |     # 复制源码并构建
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c pnpm install --frozen-lockfile" did not complete successfully: exit code: 1
