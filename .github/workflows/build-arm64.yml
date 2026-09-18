@@ -21,7 +21,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   docker-arm64:
@@ -34,17 +33,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Resolve tags
+      - name: Resolve image name & tags
         id: vars
         shell: bash
         run: |
           set -euo pipefail
+          # ghcr 要求仓库名全小写（github.repository 会保留原始大小写，如 oishi81/Pan1Watch）
+          img="$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')"
+          echo "IMAGE_NAME=$img" >> "$GITHUB_ENV"
           tag="${{ inputs.tag }}"
           if [ -z "$tag" ]; then tag="arm64"; fi
           short="$(git rev-parse --short HEAD)"
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
           echo "short=$short" >> "$GITHUB_OUTPUT"
-          echo "push tags: $tag , ${tag}-${short}"
+          echo "image: $img"
+          echo "tags: $tag , ${tag}-${short}"
           echo "arch: $(uname -m)"
 
       - name: Set up Docker Buildx
