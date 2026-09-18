@@ -3,9 +3,8 @@ name: build-arm64
 # 仅构建 linux/arm64 镜像（用于 EasePI R1 等 arm64 设备）
 # 独立于 release.yml，不影响原有发布流程。
 #
-# 触发方式：
-#   1) push 本文件到 main（首次自动构建）
-#   2) 在 Actions 页面手动 Run workflow（可自定义 tag）
+# 触发：1) push 本文件到 main  2) Actions 页面手动 Run workflow
+# 失败时会把构建日志推到 ci-debug 分支，便于排查。
 
 on:
   push:
@@ -26,10 +25,9 @@ env:
 
 jobs:
   docker-arm64:
-    # 公开仓库可直接用 GitHub 原生 arm64 runner（比 QEMU 模拟快很多）
     runs-on: ubuntu-24.04-arm
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
@@ -46,10 +44,8 @@ jobs:
           short="$(git rev-parse --short HEAD)"
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
           echo "short=$short" >> "$GITHUB_OUTPUT"
-          echo "Will push: $tag , ${tag}-${short}"
-
-      - name: Show runner arch
-        run: uname -m
+          echo "push tags: $tag , ${tag}-${short}"
+          echo "arch: $(uname -m)"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -62,19 +58,46 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push (linux/arm64)
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: ./Dockerfile
-          platforms: linux/arm64
-          push: true
-          tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }}
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }}-${{ steps.vars.outputs.short }}
-          labels: |
-            org.opencontainers.image.title=PanWatch
-            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
-          build-args: |
-            VERSION=${{ steps.vars.outputs.tag }}-${{ steps.vars.outputs.short }}
-          cache-from: type=gha,scope=arm64
-          cache-to: type=gha,mode=max,scope=arm64
+        id: build
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          docker buildx build \
+            --platform linux/arm64 \
+            --progress=plain \
+            --build-arg VERSION="${{ steps.vars.outputs.tag }}-${{ steps.vars.outputs.short }}" \
+            --cache-from type=gha,scope=arm64 \
+            --cache-to type=gha,mode=max,scope=arm64 \
+            --push \
+            -t "$REGISTRY/$IMAGE_NAME:${{ steps.vars.outputs.tag }}" \
+            -t "$REGISTRY/$IMAGE_NAME:${{ steps.vars.outputs.tag }}-${{ steps.vars.outputs.short }}" \
+            . 2>&1 | tee /tmp/build-arm64.log
+          rc=${PIPESTATUS[0]}
+          echo "build rc=$rc"
+          exit $rc
+
+      - name: Publish failure log to ci-debug branch
+        if: steps.build.outcome == 'failure'
+        shell: bash
+        run: |
+          set -euo pipefail
+          tail -c 150000 /tmp/build-arm64.log > /tmp/fail.log
+          {
+            echo "run_id=${{ github.run_id }}"
+            echo "sha=${{ github.sha }}"
+            echo "date=$(date -u +%FT%TZ)"
+            echo "---"
+          } > /tmp/head.txt
+          cat /tmp/head.txt /tmp/fail.log > build-arm64-failure.log
+          git config user.name  "ci-bot"
+          git config user.email "ci-bot@users.noreply.github.com"
+          git fetch origin ci-debug 2>/dev/null || true
+          git checkout -B ci-debug
+          git add -f build-arm64-failure.log
+          git commit -m "ci: arm64 build failure log (run ${{ github.run_id }})" || true
+          git push -f origin ci-debug
+
+      - name: Fail job if build failed
+        if: steps.build.outcome == 'failure'
+        run: exit 1
