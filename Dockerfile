@@ -7,7 +7,9 @@ FROM node:20-alpine AS frontend-builder
 WORKDIR /app/frontend
 
 # 安装 pnpm
-RUN npm install -g pnpm
+# ⚠️ 固定 pnpm 9：pnpm 10 会把「未批准的依赖构建脚本」(esbuild) 视为硬错误
+#    （ERR_PNPM_IGNORED_BUILDS），导致前端构建失败；lockfile 也是 v9 格式。
+RUN npm install -g pnpm@9
 
 # 复制依赖文件
 COPY frontend/package.json frontend/pnpm-lock.yaml ./

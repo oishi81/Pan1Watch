@@ -5,6 +5,7 @@ name: build-arm64
 #
 # 触发：1) push 本文件到 main  2) Actions 页面手动 Run workflow
 # 失败时会把构建日志推到 ci-debug 分支，便于排查。
+# 注：本 fork 的 Dockerfile 已固定 pnpm@9（pnpm10 会因 esbuild 构建脚本报 ERR_PNPM_IGNORED_BUILDS）。
 
 on:
   push:
